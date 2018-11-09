@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>select_theMostInportant | 陈志高的博客</title>
+  <title>正则表达式 | 陈志高的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我每天都有忙不完的事情,有时候忙的我都不去想哪些是重要的，哪些是不重要的，哪些是紧急的，哪些是不紧急的。显然这些是不正确的。我想我也知道目前最重要的事应该是更加关注自己的成长，但是我又会面临很多很多的选择，">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="在编写处理网页文本的程序时，经常会有查找符合某些复杂规则的字符串的需要,正则表达式就是描述这些规则的工具。">
+<meta name="keywords" content="python爬虫,正则表达式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="select_theMostInportant">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/select-theMostInportant/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/RegularExpression/index.html">
 <meta property="og:site_name" content="陈志高的博客">
-<meta property="og:description" content="我每天都有忙不完的事情,有时候忙的我都不去想哪些是重要的，哪些是不重要的，哪些是紧急的，哪些是不紧急的。显然这些是不正确的。我想我也知道目前最重要的事应该是更加关注自己的成长，但是我又会面临很多很多的选择，">
+<meta property="og:description" content="在编写处理网页文本的程序时，经常会有查找符合某些复杂规则的字符串的需要,正则表达式就是描述这些规则的工具。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-02T02:01:38.141Z">
+<meta property="og:updated_time" content="2018-11-07T07:18:39.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="select_theMostInportant">
-<meta name="twitter:description" content="我每天都有忙不完的事情,有时候忙的我都不去想哪些是重要的，哪些是不重要的，哪些是紧急的，哪些是不紧急的。显然这些是不正确的。我想我也知道目前最重要的事应该是更加关注自己的成长，但是我又会面临很多很多的选择，">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="在编写处理网页文本的程序时，经常会有查找符合某些复杂规则的字符串的需要,正则表达式就是描述这些规则的工具。">
   
     <link rel="alternative" href="/atom.xml" title="陈志高的博客" type="application/atom+xml">
   
@@ -169,31 +169,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-select-theMostInportant" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RegularExpression" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      select_theMostInportant
+      正则表达式
     </h1>
   
 
         
-        <a href="/2018/11/02/select-theMostInportant/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+        <a href="/2018/11/07/RegularExpression/" class="archive-article-date">
+  	<time datetime="2018-11-07T01:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-07</time>
 </a>
         
       </header>
     
       <!-- 目录内容 -->
       
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+        </p>
+        <div id="toc-article" class="toc-article">
+          <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本语法和使用"><span class="toc-number">1.</span> <span class="toc-text">基本语法和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-常用元字符"><span class="toc-number">1.1.</span> <span class="toc-text">1.常用元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-字符转义"><span class="toc-number">1.2.</span> <span class="toc-text">2.字符转义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重复"><span class="toc-number">1.3.</span> <span class="toc-text">3.重复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-字符集合"><span class="toc-number">1.4.</span> <span class="toc-text">4.字符集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-分支条件"><span class="toc-number">1.5.</span> <span class="toc-text">5.分支条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-分组"><span class="toc-number">1.6.</span> <span class="toc-text">6.分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-反义"><span class="toc-number">1.7.</span> <span class="toc-text">7.反义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-后向引用"><span class="toc-number">1.8.</span> <span class="toc-text">8.后向引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-零宽断言"><span class="toc-number">1.9.</span> <span class="toc-text">9.零宽断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释"><span class="toc-number">1.10.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪婪与懒惰"><span class="toc-number">1.11.</span> <span class="toc-text">贪婪与懒惰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理选项"><span class="toc-number">1.12.</span> <span class="toc-text">处理选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python与正则"><span class="toc-number">2.</span> <span class="toc-text">python与正则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-re-match-pattern-string-flags"><span class="toc-number">2.1.</span> <span class="toc-text">1.re.match(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-re-search-pattern-string-flags"><span class="toc-number">2.2.</span> <span class="toc-text">2.re.search(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-split-pattern-string-maxsplit"><span class="toc-number">2.3.</span> <span class="toc-text">3.re.split(pattern,string[,maxsplit])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-re-findall-pattern-string-flags"><span class="toc-number">2.4.</span> <span class="toc-text">4.re.findall(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-re-finditer-pattern-string-flags"><span class="toc-number">2.5.</span> <span class="toc-text">5.re.finditer(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-re-sub-patter-repl-string-count"><span class="toc-number">2.6.</span> <span class="toc-text">6.re.sub(patter,repl,string[,count])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-re-subn-pattern-repl-string-count"><span class="toc-number">2.7.</span> <span class="toc-text">7.re.subn(pattern,repl,string[,count])</span></a></li></ol></li></ol>
+        </div>
+        <script type="text/javascript">
+          function showToc(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:block");
+            show_toc_btn.setAttribute("style","display:none");
+          };
+          function showBtn(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:none");
+            show_toc_btn.setAttribute("style","display:block");
+          };
+        </script>
+      
       <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我每天都有忙不完的事情,有时候忙的我都不去想哪些是重要的，哪些是不重要的，哪些是紧急的，哪些是不紧急的。<br>显然这些是不正确的。<br>我想我也知道目前最重要的事应该是更加关注自己的成长，但是我又会面临很多很多的选择，</p>
-
+        <p>在编写处理网页文本的程序时，经常会有查找符合某些复杂规则的字符串的需要,正则表达式就是描述这些规则的工具。<br><a id="more"></a></p>
+<h2 id="基本语法和使用"><a href="#基本语法和使用" class="headerlink" title="基本语法和使用"></a>基本语法和使用</h2><h3 id="1-常用元字符"><a href="#1-常用元字符" class="headerlink" title="1.常用元字符"></a>1.常用元字符</h3><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线或汉字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意空白符，包括空格、制表符、换行符、中文全角空格等</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-字符转义"><a href="#2-字符转义" class="headerlink" title="2.字符转义"></a>2.字符转义</h3><p>使用’\’作为转义字符。</p>
+<h3 id="3-重复"><a href="#3-重复" class="headerlink" title="3.重复"></a>3.重复</h3><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复0次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复1次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复0次或者1次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-字符集合"><a href="#4-字符集合" class="headerlink" title="4.字符集合"></a>4.字符集合</h3><ul>
+<li>[0-9]与\d等价</li>
+<li>[a-z0-9A-Z]与\w等价<h3 id="5-分支条件"><a href="#5-分支条件" class="headerlink" title="5.分支条件"></a>5.分支条件</h3>例：电话号码中有一种是3位区号，8位本地号（010-11223344），另一种是4位区号，7位本地号（0321-1234567）；<br>这时需要用到分支条件：<code>0\d{2}-\d{8} | 0\d{3}-\d{7}</code><br>从左到右依次匹配，前面的条件满足了就不看后面的了，条件之间是一种或的关系。</li>
+</ul>
+<h3 id="6-分组"><a href="#6-分组" class="headerlink" title="6.分组"></a>6.分组</h3><p>例：匹配192.168.1.1这样的IP地址。<br><code>((\d{1,3})\.){3}\d{1,3}</code>。但是这样有可能出现333.444.555.666这样的IP地址所以是不合理的。<br>以下才是合理的表示方式。<br><code>((25[0-5] | 2[0-4]\d[0-1]\d{2} | [1-9]?\d)\.){3}((25[0-5] | 2[0-4]\d[0-1]\d{2} | [1-9]?\d)\.)</code></p>
+<h3 id="7-反义"><a href="#7-反义" class="headerlink" title="7.反义"></a>7.反义</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母、数字、下划线、汉字的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配不是单词开头或结束的位置</td>
+</tr>
+<tr>
+<td>[^a]</td>
+<td>匹配除了a以外的任意字符</td>
+</tr>
+<tr>
+<td>[^abcde]</td>
+<td>匹配除了a、b、c、d、e这几个字母以外的任意字符</td>
+</tr>
+<tr>
+<td>[^(123 ！abc)]</td>
+<td>匹配除了a、b、c和1、2、3这几个字符以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-后向引用"><a href="#8-后向引用" class="headerlink" title="8.后向引用"></a>8.后向引用</h3><h3 id="9-零宽断言"><a href="#9-零宽断言" class="headerlink" title="9.零宽断言"></a>9.零宽断言</h3><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h3 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h3><h3 id="处理选项"><a href="#处理选项" class="headerlink" title="处理选项"></a>处理选项</h3><h2 id="python与正则"><a href="#python与正则" class="headerlink" title="python与正则"></a>python与正则</h2><h3 id="1-re-match-pattern-string-flags"><a href="#1-re-match-pattern-string-flags" class="headerlink" title="1.re.match(pattern,string[,flags])"></a>1.re.match(pattern,string[,flags])</h3><h3 id="2-re-search-pattern-string-flags"><a href="#2-re-search-pattern-string-flags" class="headerlink" title="2.re.search(pattern,string[,flags])"></a>2.re.search(pattern,string[,flags])</h3><h3 id="3-re-split-pattern-string-maxsplit"><a href="#3-re-split-pattern-string-maxsplit" class="headerlink" title="3.re.split(pattern,string[,maxsplit])"></a>3.re.split(pattern,string[,maxsplit])</h3><h3 id="4-re-findall-pattern-string-flags"><a href="#4-re-findall-pattern-string-flags" class="headerlink" title="4.re.findall(pattern,string[,flags])"></a>4.re.findall(pattern,string[,flags])</h3><h3 id="5-re-finditer-pattern-string-flags"><a href="#5-re-finditer-pattern-string-flags" class="headerlink" title="5.re.finditer(pattern,string[,flags])"></a>5.re.finditer(pattern,string[,flags])</h3><h3 id="6-re-sub-patter-repl-string-count"><a href="#6-re-sub-patter-repl-string-count" class="headerlink" title="6.re.sub(patter,repl,string[,count])"></a>6.re.sub(patter,repl,string[,count])</h3><h3 id="7-re-subn-pattern-repl-string-count"><a href="#7-re-subn-pattern-repl-string-count" class="headerlink" title="7.re.subn(pattern,repl,string[,count])"></a>7.re.subn(pattern,repl,string[,count])</h3>
       
 
       
@@ -227,7 +367,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python爬虫</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
         		</li>
       		
 		</ul>
@@ -283,7 +427,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/02/select-theMostInportant/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/07/RegularExpression/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +441,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/04/errorCode/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/11/07/scrapyInit/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          errorCode
+          scrapy初始化
         
       </div>
     </a>
   
   
-    <a href="/2018/10/21/test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test</div>
+    <a href="/2018/11/04/activityUML/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">activityUML</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -327,6 +471,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本语法和使用"><span class="toc-number">1.</span> <span class="toc-text">基本语法和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-常用元字符"><span class="toc-number">1.1.</span> <span class="toc-text">1.常用元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-字符转义"><span class="toc-number">1.2.</span> <span class="toc-text">2.字符转义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重复"><span class="toc-number">1.3.</span> <span class="toc-text">3.重复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-字符集合"><span class="toc-number">1.4.</span> <span class="toc-text">4.字符集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-分支条件"><span class="toc-number">1.5.</span> <span class="toc-text">5.分支条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-分组"><span class="toc-number">1.6.</span> <span class="toc-text">6.分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-反义"><span class="toc-number">1.7.</span> <span class="toc-text">7.反义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-后向引用"><span class="toc-number">1.8.</span> <span class="toc-text">8.后向引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-零宽断言"><span class="toc-number">1.9.</span> <span class="toc-text">9.零宽断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释"><span class="toc-number">1.10.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪婪与懒惰"><span class="toc-number">1.11.</span> <span class="toc-text">贪婪与懒惰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理选项"><span class="toc-number">1.12.</span> <span class="toc-text">处理选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python与正则"><span class="toc-number">2.</span> <span class="toc-text">python与正则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-re-match-pattern-string-flags"><span class="toc-number">2.1.</span> <span class="toc-text">1.re.match(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-re-search-pattern-string-flags"><span class="toc-number">2.2.</span> <span class="toc-text">2.re.search(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-split-pattern-string-maxsplit"><span class="toc-number">2.3.</span> <span class="toc-text">3.re.split(pattern,string[,maxsplit])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-re-findall-pattern-string-flags"><span class="toc-number">2.4.</span> <span class="toc-text">4.re.findall(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-re-finditer-pattern-string-flags"><span class="toc-number">2.5.</span> <span class="toc-text">5.re.finditer(pattern,string[,flags])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-re-sub-patter-repl-string-count"><span class="toc-number">2.6.</span> <span class="toc-text">6.re.sub(patter,repl,string[,count])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-re-subn-pattern-repl-string-count"><span class="toc-number">2.7.</span> <span class="toc-text">7.re.subn(pattern,repl,string[,count])</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
