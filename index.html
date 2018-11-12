@@ -189,15 +189,10 @@
       <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我把python的虚拟环境安装到了python3下面。</p>
-<h3 id="1-切换到超级管理员"><a href="#1-切换到超级管理员" class="headerlink" title="1.切换到超级管理员"></a>1.切换到超级管理员</h3><p> <code>sudo su</code><br> 不切换的话无法安装到<code>/usr/local/lib/python3.6/dist-packages/</code>目录下面。</p>
-<h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装"></a>2.命令安装</h3><p><code>pip3 install virtualenv</code><br><code>pip3 install virtualenvwrapper</code><br>要注意安装顺序，否则可能出现问题。</p>
-<h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h3><p>使用<code>sudo gedit ~/.bashrc</code>命令，在该文件的结尾添加如下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export WORKON_HOME=$HOME/pythonENVs`</span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6</span><br><span class="line">source ~/.local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure></p>
-<p>注意这里的<code>VIRTUALENVWRAPPER_PYTHON</code>的路径。<br><code>WORKON_HOME</code>是我们虚拟环境的位置，网上一般设置为隐藏的，我们可以自定义。</p>
-<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><h3 id="最常用命令"><a href="#最常用命令" class="headerlink" title="最常用命令"></a>最常用命令</h3><p><code>mkvirtualenv test</code>:创建虚拟环境<br><code>workon test</code>:启动或者切换虚拟环境<br><code>deactivate</code>:退出虚拟环境<br><code>rmvirtualenv test</code>:删除虚拟环境<br><code>virtualenvwrapper --help</code>:查找一些命令<br><code>lsvirtualenv</code>:列出所有环境</p>
-<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><p><code>virtualenv -p /usr/bin/python2.7 env2.7</code><br><code>virtualenv -p /usr/bin/python3.6 env3.6</code><br>创建指定解释器版本的虚拟环境。<br><code>virtualenv --system-site-packages env27</code>:把系统原有的包直接移植到虚拟环境中</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>有了上面的这个工具，以后我们python项目的管理就更加方便了。</p>
-
+        <p>我把python的虚拟环境安装到了python3下面，安装过程中遇到一些问题，以下安装方式没有错误。<br>
+        
+          <a class="article-more-a" href="/2018/11/09/pythonVirtualEnv/#more">more >></a>
+        
       
 
       
@@ -1054,6 +1049,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -1075,10 +1074,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">vitualenv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

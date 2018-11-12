@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Ubuntu2018下Python虚拟环境搭建及使用方法记录 | 陈志高的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装我把python的虚拟环境安装到了python3下面。 1.切换到超级管理员 sudo su 不切换的话无法安装到/usr/local/lib/python3.6/dist-packages/目录下面。 2.命令安装pip3 install virtualenvpip3 install virtualenvwrapper要注意安装顺序，否则可能出现问题。 3.配置环境变量使用sudo gedi">
+  <meta name="description" content="我把python的虚拟环境安装到了python3下面，安装过程中遇到一些问题，以下安装方式没有错误。">
 <meta name="keywords" content="学习,python,vitualenv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu2018下Python虚拟环境搭建及使用方法记录">
 <meta property="og:url" content="http://yoursite.com/2018/11/09/pythonVirtualEnv/index.html">
 <meta property="og:site_name" content="陈志高的博客">
-<meta property="og:description" content="安装我把python的虚拟环境安装到了python3下面。 1.切换到超级管理员 sudo su 不切换的话无法安装到/usr/local/lib/python3.6/dist-packages/目录下面。 2.命令安装pip3 install virtualenvpip3 install virtualenvwrapper要注意安装顺序，否则可能出现问题。 3.配置环境变量使用sudo gedi">
+<meta property="og:description" content="我把python的虚拟环境安装到了python3下面，安装过程中遇到一些问题，以下安装方式没有错误。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-09T12:08:31.990Z">
+<meta property="og:updated_time" content="2018-11-09T12:24:54.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu2018下Python虚拟环境搭建及使用方法记录">
-<meta name="twitter:description" content="安装我把python的虚拟环境安装到了python3下面。 1.切换到超级管理员 sudo su 不切换的话无法安装到/usr/local/lib/python3.6/dist-packages/目录下面。 2.命令安装pip3 install virtualenvpip3 install virtualenvwrapper要注意安装顺序，否则可能出现问题。 3.配置环境变量使用sudo gedi">
+<meta name="twitter:description" content="我把python的虚拟环境安装到了python3下面，安装过程中遇到一些问题，以下安装方式没有错误。">
   
     <link rel="alternative" href="/atom.xml" title="陈志高的博客" type="application/atom+xml">
   
@@ -192,8 +192,8 @@
       <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我把python的虚拟环境安装到了python3下面。</p>
-<h3 id="1-切换到超级管理员"><a href="#1-切换到超级管理员" class="headerlink" title="1.切换到超级管理员"></a>1.切换到超级管理员</h3><p> <code>sudo su</code><br> 不切换的话无法安装到<code>/usr/local/lib/python3.6/dist-packages/</code>目录下面。</p>
+        <p>我把python的虚拟环境安装到了python3下面，安装过程中遇到一些问题，以下安装方式没有错误。<br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="1-切换到超级管理员"><a href="#1-切换到超级管理员" class="headerlink" title="1.切换到超级管理员"></a>1.切换到超级管理员</h3><p> <code>sudo su</code><br> 不切换的话无法安装到<code>/usr/local/lib/python3.6/dist-packages/</code>目录下面。</p>
 <h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装"></a>2.命令安装</h3><p><code>pip3 install virtualenv</code><br><code>pip3 install virtualenvwrapper</code><br>要注意安装顺序，否则可能出现问题。</p>
 <h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h3><p>使用<code>sudo gedit ~/.bashrc</code>命令，在该文件的结尾添加如下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export WORKON_HOME=$HOME/pythonENVs`</span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6</span><br><span class="line">source ~/.local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure></p>
 <p>注意这里的<code>VIRTUALENVWRAPPER_PYTHON</code>的路径。<br><code>WORKON_HOME</code>是我们虚拟环境的位置，网上一般设置为隐藏的，我们可以自定义。</p>
@@ -452,6 +452,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
@@ -473,10 +477,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">vitualenv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
